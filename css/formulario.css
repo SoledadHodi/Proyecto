@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Festive&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html{
+    height: 100%;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2em;
+    min-height: 100%;
+    overflow-y: scroll;
+    overflow-x: scroll;
+}
+
+/*Grid*/
+.grid-container>*{
+    box-shadow: -1px 1px 7px 0px rgb(182, 240, 182);
+    border-radius: 4px;
+    padding: 10px;
+    text-align: center;
+}
+.header{
+    grid-area: header;
+}
+.main{
+    grid-area: main;   
+}
+
+.footer{
+    grid-area: footer;
+}
+.grid-container{
+    display: grid ;
+    gap: 10px;
+    grid-template:      "header" 100px 
+                        "main" auto
+                        "footer" 100px;
+}  
+@media (min-width: 400px) {
+    .grid-container{
+       background-color:#fff;
+       grid-template: 
+       "header header header" 100px
+       "main main main" auto
+       "footer footer footer" 100px /
+       300px auto 200px;
+    }
+
+/*Header-Menu*/
+header{
+    width:100%;
+    height: 100px;
+    background-color:#fff;
+    color:#333;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 100;
+} 
+header .icon-veggie{
+    font-family: 'Dancing Script', cursive;
+    color:rgb(9, 78, 9);
+    font-size:450%;
+    margin-top: -16px;
+}
+
+h1{
+    float:left;
+}
+header.contenedor{
+    display:table;
+}
+#menu-bar{
+    display:none;
+}
+header label{
+    float:right;
+    font-size: 28px;
+    margin:6px 0px;
+    cursor:pointer;
+}
+.menu{
+    position:absolute;
+    top:50px;
+    left: 0px;
+    width: 100%;
+    height:100vh;
+    background: #fff;
+    transition: all 0.5;
+    transform: translateX(-100%);
+}
+.menu a{
+    display: block;
+    font-family: 'B612 Mono', monospace;
+    font-size: 18px;    
+    color:rgb(3,54,3);
+    height: 50px;
+    text-decoration: none;
+    padding: 15px;
+    border-bottom: 1px solid rgb(3,54,3);
+}
+.menu a:hover{
+    background:rgb(204, 203, 204);
+}
+#menu-bar:checked ~ .menu{
+    transform: translateX(0%);
+}
+@media(min-width:1024px){
+    .menu{
+        position: static;
+        width: auto;
+        height: auto;
+        transform: translateX(0%);
+        float: right;
+        display: flex;
+    }
+    .menu a{
+        border:none
+    }
+    header label{
+        display: none;
+    }
+}
+/*Main-Formulario*/
+.main .main-content{
+    padding-top: 30px;
+    width: 70%;
+    margin: auto;
+    padding-bottom: 30px;
+}
+.main .main-content .main-title{
+    width: 80%;
+    margin: auto;
+    border:2px solid rgb(3,54,3);
+    padding:30px;
+}
+.main .main-content .main-title h2{
+    font-weight: normal;
+    font-size:30px;
+    color: rgb(3,54,3);
+    text-align: center; 
+}
+ .main .formulario-content{
+     width: 80%;
+     margin: 50px auto;
+     background: white;
+     padding:30px;
+     border-radius: 70px;
+     border: 2px solid rgb(3,54,3);
+ }
+ .main .formulario-content #formulario{
+     display: flex;
+     justify-content: center;
+     flex-direction: column;
+ }
+ .main .formulario-content #formulario label{
+     font-size: 20px;
+     text-align: center;
+     color:rgb(3,54,3);
+     margin: 30px 0px 10px 0px;
+ }
+ .main .formulario-content #formulario input{
+     width: 90%;
+     height: 40px;
+     margin:auto;
+     border-radius: 24px;
+     outline: none;
+     border:2px solid rgb(3,54,3);
+     text-align: center;
+     font-size: 18px;
+     color: black;
+ }
+ .main .formulario-content #formulario textarea{
+     width: 90%;
+     height: 200px;
+     margin:auto;
+     padding: 20px;
+     border-radius: 24px;
+     outline: none;
+     border:2px solid rgb(3,54,3);
+     font-size: 15px;
+     color: black;
+     text-align: left;
+ }
+ .main .formulario-content #formulario .send{
+     margin: 30px;
+     display: flex;
+     justify-content: center;
+ }
+ .main .formulario-content #formulario button{
+     width: 120px;
+     height: 40px;
+     text-align: center;
+     line-height: 40px;
+     font-size: 20px;
+     background: #fff;
+     border: 2px solid rgb(3,54,3);
+     outline: none;
+     border-radius: 20px;
+     cursor: pointer;
+     transition: 0.5s;
+ }
+ .main .formulario-content #formulario button:hover{
+     background: rgb(204,203,204);
+ }
+ .main .formulario-content #formulario .mensaje-form{
+     width: 100%;
+     margin:auto;
+     padding:20px;
+ }
+ #mail{
+     opacity: 0;
+ }
+
+ @media only screen and (max-width:900px){
+    .main .formulario-content{
+        width: 85%; 
+        padding:20px;
+    }
+    .main .formulario-content #formulario input{
+        width: 100%;
+    }
+    .main .formulario-content #formulario textarea{
+        width: 100%;
+    }
+}
+@media only screen and (max-width:590px){
+    .main .formulario-content{
+        width: 95%; 
+        padding:20px;
+    }
+    .main .formulario-content #formulario label{
+        font-size: 17px;
+    }
+    .main .formulario-content #formulario input{
+        width: 100%; 
+        font-size: 17px;
+    }
+    .main .formulario-content #formulario textarea{
+        width: 100%;
+    }
+}
+
+/*Footer*/
+footer .contenedor{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 25px;
+}
+.copy{
+    font-size: 15px;
+    color: #333;
+}
+ .iconos{
+     width: 100%;
+     text-align: center;
+     font-size: 28px;
+}
+ .iconos a{
+     color:rgb(17, 29, 17);
+     text-decoration: none;
+ 
+}
+}
+

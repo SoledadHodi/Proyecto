@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/formulario.css">
+    <script src="js/formulario.js"></script>
+</head>
+
+<body class="grid-container" class="body">
+    <!--Header-Menu-->
+    <header class="header">
+        <div class="contenedor">
+            <h1 class="icon-veggie"><i class="fas fa-seedling"></i>Veggie</h1>
+            <input type="checkbox" id="menu-bar" >
+            <label for="menu-bar"><i class="fas fa-bars"></i></label>
+                <nav class="menu">
+                     <a href="index.html">Inicio</a>
+                     <a href="entrada.html">Entradas</a>
+                     <a href="principal.html">Principales</a>
+                     <a href="postre.html">Postres Veganos</a>
+                </nav>
+        </div>         
+    </header>
+    <!--Main-->       
+    <main class="main">
+    <!--Formulario-->
+    <div class="main-content">
+    <div class="main-title">
+     <h2>Formulario de Contacto</h2>
+     <br>
+    </div>
+
+    <div class="formulario-content">
+     <form id="formulario" onsubmit="return validar();">
+        <label for="user">Nombre y Apellido:</label>
+        <input type="text" id="user" name="user" placeholder="Nombre y Apellido">
+   
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" placeholder="Correo electrónico">
+   
+        <label for="message">Escribe tu mensaje</label>
+        <textarea name="message" id="message"></textarea>
+        <div class="send"><button>Enviar</button></div>
+     </form>
+    
+    </div>
+    </main>
+    <!--Footer-->
+    <footer class="footer">
+      <div class="contenedor">
+          <p class="copy">Veggie &copy;2021</p>
+      </div>
+      <div class="iconos">
+          <a href="https://www.linkedin.com/in/soledad-hodi-06a289196/" target="blank"> <i class="fab fa-linkedin"></i></a></li>
+          <a href="https://twitter.com/HodiSoledad" targer="blank"><i class="fab fa-twitter"></i></a></li>
+          <a href="https://www.facebook.com/sooole.06/" targer="blank"><i class="fab fa-facebook"></i></a></li>
+          <a href="https://www.instagram.com/soledadhodi/" targer="blank"><i class="fab fa-instagram"></i></a></li>
+      </div>
+  </footer>  
+ 
+</body>
+</html>

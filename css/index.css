@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Festive&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html{
+    height: 100%;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2em;
+    min-height: 100%;
+    overflow-y: scroll;
+    overflow-x: scroll;
+}
+
+/*Grid*/
+.grid-container>*{
+    box-shadow: -1px 1px 7px 0px rgb(182, 240, 182);
+    border-radius: 4px;
+    padding: 10px;
+    text-align: center;
+}
+.header{
+    grid-area: header;
+}
+.main{
+    grid-area: main;   
+}
+
+.footer{
+    grid-area: footer;
+}
+.grid-container{
+    display: grid ;
+    gap: 10px;
+    grid-template:      "header" 100px 
+                        "main" auto
+                        "footer" 100px;
+}  
+@media (min-width: 400px) {
+    .grid-container{
+       background-color:#fff;
+       grid-template: 
+       "header header header" 100px
+       "main main main" auto
+       "footer footer footer" 100px /
+       300px auto 200px;
+    }
+
+/*Header-Menu*/
+header{
+    width:100%;
+    height: 100px;
+    background-color:#fff;
+    color:#333;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 100;
+} 
+header .icon-veggie{
+    font-family: 'Dancing Script', cursive;
+    color:rgb(9, 78, 9);
+    font-size:450%;
+    margin-top: -16px;
+}
+
+h1{
+    float:left;
+}
+header.contenedor{
+    display:table;
+}
+#menu-bar{
+    display:none;
+}
+header label{
+    float:right;
+    font-size: 28px;
+    margin:6px 0px;
+    cursor:pointer;
+}
+.menu{
+    position:absolute;
+    top:50px;
+    left: 0px;
+    width: 100%;
+    height:100vh;
+    background: #fff;
+    transition: all 0.5;
+    transform: translateX(-100%);
+}
+.menu a{
+    display: block;
+    font-family: 'B612 Mono', monospace;
+    font-size: 18px;    
+    color:rgb(3,54,3);
+    height: 50px;
+    text-decoration: none;
+    padding: 15px;
+    border-bottom: 1px solid rgb(3,54,3);
+}
+.menu a:hover{
+    background:rgb(204, 203, 204);
+}
+#menu-bar:checked ~ .menu{
+    transform: translateX(0%);
+}
+@media(min-width:1024px){
+    .menu{
+        position: static;
+        width: auto;
+        height: auto;
+        transform: translateX(0%);
+        float: right;
+        display: flex;
+    }
+    .menu a{
+        border:none
+    }
+    header label{
+        display: none;
+    }
+}
+}
+/*Main*/
+section {
+    width: 100%;
+    margin-bottom: 25px;
+}
+.contenedor{
+    width:98%;
+    margin: auto;
+}
+
+/*Banner*/
+#banner{
+    margin-top:0px;
+    position: relative;
+}
+#banner img{
+    width: 100%;
+    height: 100%;
+}
+#banner .contenedor{
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    color:rgb(3,54,3);
+    text-align: center;
+}
+#banner h2{
+    font-family: 'Cinzel', serif;
+    font-size: 28px;
+}
+#banner h3{
+    font-family: 'B612 Mono', monospace;
+}
+
+@media(min: width 480px){
+    #banner h2{
+        font-size: 40px;
+    }
+}
+@media(min-width:768px){
+    #banner{
+        height: 300px;
+        overflow: hidden;
+    }
+    #banner img{
+        height: auto;
+        margin-top: -120px;
+    }
+    
+}
+@media(min-width: 1024px){
+    #banner img{
+        margin-top: -220px;
+        
+    }
+}
+
+/*Recetas*/
+
+#recetas .contenedor{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+#recetas article{
+    margin:15px;
+}
+#recetas img{
+    width:100%;
+    max-width: 280px;
+}
+
+#caja-madre{
+    width: 100%;
+    position:relative;
+    overflow: hidden;
+    height: 250px;
+}
+.img-cajas{
+    width: 100%;
+    height: 100%;
+}
+.texto-imagen{
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    z-index: 10;
+    background-color: rgb(204, 203, 204);
+    height: 15%;
+    padding: .3em;
+    width: 100%;
+    transition:  all 1s ease;
+    font-family: 'B612 Mono', monospace;
+    color: rgb(3, 54, 3);
+    text-decoration: none;
+    
+}
+#caja-madre:hover .texto-imagen{
+    height: 25%;
+}
+
+/*Próximas recetas*/
+#proximas-recetas{
+    font-family: 'B612 Mono', monospace;
+    background:#fff;
+    color:rgb(3, 54, 3);
+    text-align: center;
+    padding: 20px;
+}
+#proximas-recetas .contenedor{
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content:center;   
+}
+.nombre-receta{
+    margin:20px;
+}
+.nombre-receta img{
+    width: 180px;
+    height:180px;
+    border-radius: 50%;
+    border:1px solid rgb(3, 54, 3);
+}
+@media(min-width:480px){
+    .nombre-receta{
+        width: 40%;
+    }
+}
+@media(min-width:1024px){
+    .nombre-receta{
+        width:auto;
+    }
+}
+
+/*Footer*/
+footer .contenedor{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 25px;
+}
+.copy{
+   font-size: 15px;
+   color: #333;
+}
+.iconos{
+    width: 100%;
+    text-align: center;
+    font-size: 28px;
+}
+.iconos a{
+    color:rgb(17, 29, 17);
+    text-decoration: none;
+
+}
+@media(min-width: 1024px){
+    .contenedor{
+        width: 1000px;
+    }
+}
+@media(min-width: 768px){
+    .iconos{
+        width: auto;
+    }
+    footer .contenerdor{
+        justify-content: space-between;
+    }
+}
